@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Entity;
 
@@ -17,8 +17,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: "string", length: 180, unique: true)]
     private ?string $email = null;
-
-     /**
+    
+    /**
      * @var list<string> The user roles
      */
     private array $roles = [];
@@ -55,7 +55,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return (string) $this->email;
     }
 
-/**
+    /**
      * @see UserInterface
      * @return list<string>
      */
@@ -77,10 +77,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-     /**
+    /**
      * @see PasswordAuthenticatedUserInterface
      */
-    public function getPassword(): ?string{
+    public function getPassword(): ?string
+    {
         return $this->password;
     }
 
@@ -122,11 +123,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->phoneNumber = $phoneNumber;
         return $this;
     }
-    
+
     /**
      * @see UserInterface
      */
-    public function eraseCredentials(): void
-    {
-    }
+    public function eraseCredentials(): void {}
 }
