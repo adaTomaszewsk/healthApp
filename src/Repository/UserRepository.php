@@ -23,8 +23,7 @@ class UserRepository extends ServiceEntityRepository
     {
         $this->getEntityManager()->persist($user);
         if ($flush) {
-            $this->getEntityManager()->$flush();
+            $this->getEntityManager()->flush();
         }
     }
-
 }
